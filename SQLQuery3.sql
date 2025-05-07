@@ -1,0 +1,2 @@
+﻿ALTER TABLE Owners
+ADD ProfileImage VARBINARY(MAX);

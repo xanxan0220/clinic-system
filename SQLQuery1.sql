@@ -1,0 +1,1 @@
+﻿DELETE FROM Vets WHERE Username = 'Dr.Monica';

@@ -1,0 +1,440 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A56AB238-F041-48ED-91C3-AD34C156880E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>PetHavenManagementSystem</RootNamespace>
+    <AssemblyName>PetHavenManagementSystem</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Cryptography, Version=2.0.0.0, Culture=neutral, PublicKeyToken=072edcf4a5328938, processorArchitecture=MSIL">
+      <HintPath>packages\BouncyCastle.Cryptography.2.5.1\lib\net461\BouncyCastle.Cryptography.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Protobuf, Version=3.30.0.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>packages\Google.Protobuf.3.30.0\lib\net45\Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="Guna.UI">
+      <HintPath>..\..\..\Downloads\Guna_UI_Framework_Ultimate_v2.0.0.1\Guna_UI_Framework_Ultimate_v2.0.0.1\Guna_UI_Framework_Ultimate_v2.0.0.1\Guna.UI-Framework-Lib-master\Guna.UI WinForms\.net 4.0\Guna.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Compression.LZ4, Version=1.3.8.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>packages\K4os.Compression.LZ4.1.3.8\lib\net462\K4os.Compression.LZ4.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Compression.LZ4.Streams, Version=1.3.8.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>packages\K4os.Compression.LZ4.Streams.1.3.8\lib\net462\K4os.Compression.LZ4.Streams.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Hash.xxHash, Version=1.0.8.0, Culture=neutral, PublicKeyToken=32cd54395057cec3, processorArchitecture=MSIL">
+      <HintPath>packages\K4os.Hash.xxHash.1.0.8\lib\net462\K4os.Hash.xxHash.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Bcl.AsyncInterfaces.5.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="MySql.Data, Version=9.3.0.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>packages\MySql.Data.9.3.0\lib\net462\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.ConfigurationManager, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Configuration.ConfigurationManager.8.0.0\lib\net462\System.Configuration.ConfigurationManager.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=8.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Diagnostics.DiagnosticSource.8.0.1\lib\net462\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Pipelines, Version=5.0.0.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.IO.Pipelines.5.0.2\lib\net461\System.IO.Pipelines.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Messaging" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="ZstdSharp, Version=0.8.5.0, Culture=neutral, PublicKeyToken=8d151af33a4ad5cf, processorArchitecture=MSIL">
+      <HintPath>packages\ZstdSharp.Port.0.8.5\lib\net462\ZstdSharp.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Admin\AdminDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\AdminDashboard.Designer.cs">
+      <DependentUpon>AdminDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Appoinments.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\Appoinments.Designer.cs">
+      <DependentUpon>Appoinments.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ClientsProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\ClientsProfile.Designer.cs">
+      <DependentUpon>ClientsProfile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Homepage\ClinicHomePage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Homepage\ClinicHomePage.Designer.cs">
+      <DependentUpon>ClinicHomePage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Homepage\Homepage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Homepage\Homepage.Designer.cs">
+      <DependentUpon>Homepage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Homepage\Services.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Homepage\Services.Designer.cs">
+      <DependentUpon>Services.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginForms\ForgotPaswordForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForms\ForgotPaswordForm.Designer.cs">
+      <DependentUpon>ForgotPaswordForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginForms\LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForms\LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\MembershipView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\MembershipView.Designer.cs">
+      <DependentUpon>MembershipView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginForms\ResetPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForms\ResetPassword.Designer.cs">
+      <DependentUpon>ResetPassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MembershipModel.cs" />
+    <Compile Include="Models\ProfileModel.cs" />
+    <Compile Include="Models\PetsModel.cs" />
+    <Compile Include="Owner\PaymentMethodForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Owner\PaymentMethodForm.Designer.cs">
+      <DependentUpon>PaymentMethodForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Owner\PetPhoto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Owner\PetPhoto.Designer.cs">
+      <DependentUpon>PetPhoto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Repositories\MembershipRepository.cs" />
+    <Compile Include="Repositories\ProfileRepository.cs" />
+    <Compile Include="Repositories\PetRepository.cs" />
+    <Compile Include="Session.cs" />
+    <Compile Include="Models\UsersModel.cs" />
+    <Compile Include="Repositories\UsersRepository.cs" />
+    <Compile Include="Owner\ReceiptForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Owner\ReceiptForm.Designer.cs">
+      <DependentUpon>ReceiptForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Veterinarian\AppointmentManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Veterinarian\AppointmentManage.Designer.cs">
+      <DependentUpon>AppointmentManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Veterinarian\MembershipManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Veterinarian\MembershipManage.Designer.cs">
+      <DependentUpon>MembershipManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Veterinarian\VetProfileManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Veterinarian\VetProfileManage.Designer.cs">
+      <DependentUpon>VetProfileManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Owner\AddPet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Owner\AddPet.Designer.cs">
+      <DependentUpon>AddPet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Owner\Appointment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Owner\Appointment.Designer.cs">
+      <DependentUpon>Appointment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AdminAcc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\AdminAcc.Designer.cs">
+      <DependentUpon>AdminAcc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginForms\RegistrationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForms\RegistrationForm.Designer.cs">
+      <DependentUpon>RegistrationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\PetProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\PetProfile.Designer.cs">
+      <DependentUpon>PetProfile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Owner\Membership Plans.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Owner\Membership Plans.Designer.cs">
+      <DependentUpon>Membership Plans.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Owner\OwnerAcc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Owner\OwnerAcc.Designer.cs">
+      <DependentUpon>OwnerAcc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Owner\OwnerDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Owner\OwnerDashboard.Designer.cs">
+      <DependentUpon>OwnerDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Owner\OwnerProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Owner\OwnerProfile.Designer.cs">
+      <DependentUpon>OwnerProfile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Owner\OwnersPetProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Owner\OwnersPetProfile.Designer.cs">
+      <DependentUpon>OwnersPetProfile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Veterinarian\PetProfileManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Veterinarian\PetProfileManage.Designer.cs">
+      <DependentUpon>PetProfileManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Veterinarian\VetAcc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Veterinarian\VetAcc.Designer.cs">
+      <DependentUpon>VetAcc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Veterinarian\VetDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Veterinarian\VetDashboard.Designer.cs">
+      <DependentUpon>VetDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\VetProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\VetProfile.Designer.cs">
+      <DependentUpon>VetProfile.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Admin\AdminDashboard.resx">
+      <DependentUpon>AdminDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\Appoinments.resx">
+      <DependentUpon>Appoinments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\ClientsProfile.resx">
+      <DependentUpon>ClientsProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Homepage\ClinicHomePage.resx">
+      <DependentUpon>ClinicHomePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Homepage\Homepage.resx">
+      <DependentUpon>Homepage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Homepage\Services.resx">
+      <DependentUpon>Services.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForms\ForgotPaswordForm.resx">
+      <DependentUpon>ForgotPaswordForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForms\LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\MembershipView.resx">
+      <DependentUpon>MembershipView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForms\ResetPassword.resx">
+      <DependentUpon>ResetPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Owner\PaymentMethodForm.resx">
+      <DependentUpon>PaymentMethodForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Owner\PetPhoto.resx">
+      <DependentUpon>PetPhoto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Owner\ReceiptForm.resx">
+      <DependentUpon>ReceiptForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Veterinarian\AppointmentManage.resx">
+      <DependentUpon>AppointmentManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Veterinarian\MembershipManage.resx">
+      <DependentUpon>MembershipManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Veterinarian\VetProfileManage.resx">
+      <DependentUpon>VetProfileManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Owner\AddPet.resx">
+      <DependentUpon>AddPet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\PetProfile.resx">
+      <DependentUpon>PetProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Owner\Appointment.resx">
+      <DependentUpon>Appointment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\AdminAcc.resx">
+      <DependentUpon>AdminAcc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForms\RegistrationForm.resx">
+      <DependentUpon>RegistrationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Owner\Membership Plans.resx">
+      <DependentUpon>Membership Plans.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Owner\OwnerAcc.resx">
+      <DependentUpon>OwnerAcc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Owner\OwnerDashboard.resx">
+      <DependentUpon>OwnerDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Owner\OwnerProfile.resx">
+      <DependentUpon>OwnerProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Owner\OwnersPetProfile.resx">
+      <DependentUpon>OwnersPetProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Veterinarian\PetProfileManage.resx">
+      <DependentUpon>PetProfileManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Veterinarian\VetAcc.resx">
+      <DependentUpon>VetAcc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Veterinarian\VetDashboard.resx">
+      <DependentUpon>VetDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\VetProfile.resx">
+      <DependentUpon>VetProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
